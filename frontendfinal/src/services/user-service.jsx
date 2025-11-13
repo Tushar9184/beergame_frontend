@@ -67,3 +67,31 @@ export const createRoom = async () => {
   // 3. Return the raw response data (the GameRoom object)
   return res.data;
 };
+export const joinLobby = async (gameId, role) => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    throw new Error("No token found — please login first.");
+  }
+
+  try {
+    const res = await myAxios.post(
+      `/api/game/${gameId}/join`,
+      { role }, // ✅ matches JoinGameRequestDTO
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    const { gameId: returnedGameId } = res.data;
+    localStorage.setItem("roomId", returnedGameId);
+    localStorage.setItem("role", role);
+
+    return res.data;
+  } catch (err) {
+    console.error("Error joining lobby:", err.response || err);
+    throw err;
+  }
+};

@@ -9,6 +9,7 @@ import Contact from "./pages/Contact"
 import About from "./pages/About"
 import Learn from "./pages/Learn"
 import CreateRoom from "./pages/CreateRoom"
+import JoinLobby from "./pages/CreateRoom"
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
   { path: "/login", element: <LoginPage /> },
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
   {path:"/about", element:<About/>},
   {path:"/learn", element:<Learn/>},
   {path:"/contact", element:<Contact/>},
-  {path:"/createroom", element:<CreateRoom/>}
+  {path:"/createroom", element:<CreateRoom/>},
+  {path:"/joinlobby",element:<JoinLobby/>}
 
 ]);
 

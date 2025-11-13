@@ -29,6 +29,7 @@ export default function Navbar() {
               <span style={{ marginRight: "10px" }}>Hi, {username}</span>
               <Link to="CreateLobby" className="btn secondary">Create Lobby</Link>
               <Link to="createroom" className="btn secondary">Create Room</Link>
+              <Link to="/joinlobby" className="btn secondary">Join lobby</Link>
               <button className="btn secondary" onClick={handleLogout}>
                 Logout
               </button>
