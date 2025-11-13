@@ -9,7 +9,7 @@ import Contact from "./pages/Contact"
 import About from "./pages/About"
 import Learn from "./pages/Learn"
 import CreateRoom from "./pages/CreateRoom"
-import JoinLobby from "./pages/CreateRoom"
+import JoinLobby from "./pages/JoinLobby"
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
   { path: "/login", element: <LoginPage /> },
